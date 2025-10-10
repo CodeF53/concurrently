@@ -1,15 +1,17 @@
-# EditorConfig is awesome: http://EditorConfig.org
+# EditorConfig is awesome: https://editorconfig.org
 
-# Top-most EditorConfig file
 root = true
 
-# Unix-style newlines with newline ending and space indentation for all files
 [*]
 end_of_line = lf
 insert_final_newline = true
+charset = utf-8
 indent_style = space
+trim_trailing_whitespace = true
 
-# 4 space indentation and max line length of 100 in JavaScript/TypeScript files
 [*.{js,ts}]
 indent_size = 4
 max_line_length = 100
+
+[*.md]
+trim_trailing_whitespace = false
