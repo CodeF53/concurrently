@@ -1,16 +1,13 @@
 name: Feature Request
 description: Open a feature request
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for taking the time to fill out this feature request!
-        Before you get started, please ensure there's [no existing issue](https://github.com/open-cli-tools/concurrently/issues) with the same concern!
   - type: textarea
     attributes:
-      label: Describe the Feature Request
+      label: Describe the feature request
       value: |
         <!--
+
+        >> Before getting started, please ensure there's no existing issue with the same concern!
 
         Please provide the following information:
 

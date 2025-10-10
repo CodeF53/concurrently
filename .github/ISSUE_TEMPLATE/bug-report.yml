@@ -1,16 +1,13 @@
 name: Bug Report
 description: File a bug report
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for taking the time to fill out this bug report!
-        Before you get started, please ensure there's [no existing issue](https://github.com/open-cli-tools/concurrently/issues) with the same concern!
   - type: textarea
     attributes:
-      label: Describe the Bug
+      label: Describe the bug
       value: |
         <!--
+
+        >> Before getting started, please ensure there's no existing issue with the same concern!
 
         Please provide the following information:
 
