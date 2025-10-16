@@ -79,7 +79,7 @@ $ concurrently -c red,blue 'echo Hello there' 'echo General Kenobi!'
 - `yellow`
 </details>
 
-Colors can take modifiers too. Several can be applied at once by prepending `.<modifier 1>.<modifier 2>` and so on.
+Colors can take modifiers too. Several can be applied at once by appending `.<modifier 1>.<modifier 2>` and so on.
 
 ```bash
 $ concurrently -c '#23de43.inverse,bold.blue.dim' 'echo Hello there' 'echo General Kenobi!'
