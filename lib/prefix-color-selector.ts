@@ -96,6 +96,6 @@ export class PrefixColorSelector {
      * @returns The given custom colors then a set of acceptable console colors indefinitely.
      */
     getNextColor(): string {
-        return this.colorGenerator.next().value;
+        return this.colorGenerator.next().value.trim();
     }
 }

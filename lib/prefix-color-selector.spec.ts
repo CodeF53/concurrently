@@ -36,6 +36,10 @@ describe('#getNextColor()', () => {
                 'blue',
             ],
         },
+        'trims colors': {
+            customColors: ['  red  ', '  green  ', '  blue  '],
+            expectedColors: ['red', 'green', 'blue'],
+        },
         'accepts a string value for customColors': {
             customColors: 'red',
             expectedColors: ['red', 'red'],
