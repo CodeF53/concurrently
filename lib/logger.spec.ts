@@ -211,6 +211,16 @@ describe('#logCommandText()', () => {
         expect(logger.log).toHaveBeenCalledWith(`${chalk.blue('[1]')} `, 'foo', cmd);
     });
 
+    it('logs prefix using default color if prefixColor from command is not a valid color', () => {
+        const { logger } = createLogger({});
+        const cmd = new FakeCommand('', undefined, 1, {
+            prefixColor: 'fake.bold',
+        });
+        logger.logCommandText('foo', cmd);
+
+        expect(logger.log).toHaveBeenCalledWith(chalk.reset('[1]') + ' ', 'foo', cmd);
+    });
+
     it('logs prefix in gray dim if prefixColor from command does not exist', () => {
         const { logger } = createLogger({});
         const cmd = new FakeCommand('', undefined, 1, {

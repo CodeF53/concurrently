@@ -12,7 +12,10 @@ const noColorChalk = new Chalk({ level: 0 });
 function getChalkPath(chalk: ChalkInstance, path: string): ChalkInstance | undefined {
     return path
         .split('.')
-        .reduce((prev, key) => (prev as unknown as Record<string, ChalkInstance>)[key], chalk);
+        .reduce(
+            (prev, key) => prev && (prev as unknown as Record<string, ChalkInstance>)[key],
+            chalk,
+        );
 }
 
 export class Logger {
