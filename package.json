@@ -24,11 +24,9 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/lib/index.d.ts",
-  "publishConfig": {
-    "bin": {
-      "concurrently": "./dist/bin/index.js",
-      "conc": "./dist/bin/index.js"
-    }
+  "bin": {
+    "concurrently": "./dist/bin/index.js",
+    "conc": "./dist/bin/index.js"
   },
   "files": [
     "!**/*.spec.d.ts",
