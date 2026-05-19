@@ -288,15 +288,6 @@ describe('--names', () => {
             expect(lines).toContainEqual(expect.stringContaining('[bar] bar'));
         });
     });
-
-    it('is split using --name-separator arg', async () => {
-        const lines = await run(
-            '--names "foo|bar" --name-separator "|" "echo foo" "echo bar"',
-        ).getLogLines();
-
-        expect(lines).toContainEqual(expect.stringContaining('[foo] foo'));
-        expect(lines).toContainEqual(expect.stringContaining('[bar] bar'));
-    });
 });
 
 describe('specifies custom prefix', () => {

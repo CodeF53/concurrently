@@ -22,11 +22,6 @@ export const maxProcesses = 0;
 export const hide = '';
 
 /**
- * The character to split <names> on.
- */
-export const nameSeparator = ',';
-
-/**
  * Which prefix style to use when logging processes output.
  */
 export const prefix = '';

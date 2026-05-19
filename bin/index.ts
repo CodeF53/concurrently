@@ -4,7 +4,6 @@ import process from 'node:process';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { assertDeprecated } from '../lib/assert.js';
 import * as defaults from '../lib/defaults.js';
 import { concurrently } from '../lib/index.js';
 import { castArray, splitOutsideParens } from '../lib/utils.js';
@@ -45,12 +44,6 @@ const program = yargs(hideBin(process.argv))
                 'List of custom names to be used in prefix template.\n' +
                 'Example names: "main,browser,server"',
             type: 'string',
-        },
-        'name-separator': {
-            describe:
-                'The character to split <names> on. Example usage:\n' +
-                '-n "styles|scripts|server" --name-separator "|"',
-            default: defaults.nameSeparator,
         },
         success: {
             alias: 's',
@@ -214,20 +207,7 @@ const program = yargs(hideBin(process.argv))
         },
     })
     .group(
-        [
-            'm',
-            'n',
-            'name-separator',
-            's',
-            'r',
-            'no-color',
-            'hide',
-            'g',
-            'timings',
-            'shell',
-            'P',
-            'teardown',
-        ],
+        ['m', 'n', 's', 'r', 'no-color', 'hide', 'g', 'timings', 'shell', 'P', 'teardown'],
         'General',
     )
     .group(['p', 'c', 'l', 't', 'pad-prefix'], 'Prefix styling')
@@ -237,14 +217,8 @@ const program = yargs(hideBin(process.argv))
     .epilogue(epilogue);
 
 const args = program.parseSync();
-assertDeprecated(
-    args.nameSeparator === defaults.nameSeparator,
-    'name-separator',
-    'Use commas as name separators instead.',
-);
 
-// Get names of commands by the specified separator
-const names = (args.names || '').split(args.nameSeparator);
+const names = (args.names || '').split(',');
 
 const additionalArguments = castArray(args['--'] ?? []).map(String);
 const commands = args.passthroughArguments ? args._ : args._.concat(additionalArguments);
